@@ -7,20 +7,25 @@ Also mention that I have tryed in different linux systems, specifically in ones 
 
 I will do the installation using the **apt** packet manager. If you don't use a Debian-based Linux OS just change it with the one you're currently using.
 
-## PART 1: INSTALLATION OF OPENFORTIVPN WITH THE CORRECT DEPENDENCIES
+## PART 1: INSTALLATION OF OPENFORTIVPN WITH THE CORRECT DEPENDENCIES ##
 
 First install the correct package. In Debian will be downloaded by default but in other operating systems may be different. 
 ```
-$ sudo apt update
-$ sudo apt install openfortivpn
+sudo apt update
+sudo apt install openfortivpn
 ```
 
 ## PART 2: USING THE CORRECT COMMAND WITH SAML LOGIN
 
 As we will need SAML login for the VPN, we will use the correct flag with openfortivpn. For further information of the used flags, check *man openfortivpn* :
-> sudo openfortivpn --saml-login myupclink.upc.edu:443 --username <your_upc_username>
+```
+sudo openfortivpn --saml-login myupclink.upc.edu:443 --username <your_upc_username>
+```
 
-## EXTRA :)
+## EXTRA :) ##
 
 I recommend you to use an alias for the next time, so copy the next into your .bashrc or .bash_aliases:
-> alias vpn-upc='sudo openfortivpn --saml-login myupclink.upc.edu:443 --username <your_upc_username>'
+```
+alias vpn-upc='sudo openfortivpn --saml-login myupclink.upc.edu:443 --username <your_upc_username>'
+```
+
