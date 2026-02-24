@@ -20,9 +20,50 @@ For checking that the installation was correct try to ask for the version:
 openfortivpn --version
 ```
 
-Depending of the OS that you use maybe you will need an older version of libssl (maybe the openssl 1.1.1). If you use a debian-based distribution this link may be helful:
-- 🛠️ **OpenSSL 1.1.x on GNU/Debian 12**  
-  https://ixidor.substack.com/p/openssl-11x-on-gnudebian-12
+If the version is 1.23.1 or higher, you can continue with part 2. If you have 1.19.x, you will have to install it manually.
+For a manual installation we will use the official upstream repository
+```
+sudo apt update
+sudo apt install build-essential \
+		 autoconf automake pkg-config \
+		 libssl-dev \
+		 libxml2-dev \
+		 libproxy-dev
+```
+
+Now in your home directory (~/) you will have to clone the official repo:
+```
+git clone https://github.com/adrienverge/openfortivpn.git
+cd openfortivpn
+git checkout v1.23.1
+```
+
+In $HOME/openfortivpn you will execute the following commands:
+```
+./autogen.sh
+./configure
+```
+
+The correct output should look like that:
+> SSL support: yes
+
+> SAML support: yes
+
+Now compile it and install it
+```
+make
+sudo make install
+```
+
+Finally you will verify that the correct version has been installed with the next commands:
+```
+which openfortivpn
+openfortivpn --version
+openfortivpn --help | grep saml
+```
+
+* EXTRA: In case you want to uninstall it, run the next command:
+> sudo rm /usr/local/bin/openfortivpn 
 
 ## PART 2: USING THE CORRECT COMMAND WITH SAML LOGIN
 
