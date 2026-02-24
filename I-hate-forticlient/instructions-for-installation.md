@@ -37,4 +37,7 @@ I recommend you to use an alias for the next time, so copy the next into your .b
 ```
 alias vpn-upc='sudo openfortivpn --saml-login myupclink.upc.edu:443 --username <your_upc_username>'
 ```
-
+Also, if you use a Debian-based distribution the script-for-debian.sh will do all the job for you (be sure of giving the script execute permission), by typing:
+```
+./script-for-debian.sh
+```
