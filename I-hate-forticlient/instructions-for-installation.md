@@ -87,6 +87,7 @@ Also, if you use a Debian13-based distribution the script-for-debian.sh will do 
 ```
 
 If the previous script failed, try with script-of-manual-installation.sh
+The openfortivpn package will be installed in the same place where you execute the script:
 ```
 ./script-for-manual-installation.sh
 ```
