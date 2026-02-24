@@ -15,6 +15,15 @@ sudo apt update
 sudo apt install openfortivpn
 ```
 
+For checking that the installation was correct try to ask for the version:
+```
+openfortivpn --version
+```
+
+Depending of the OS that you use maybe you will need an older version of libssl (maybe the openssl 1.1.1). If you use a debian-based distribution this link may be helful:
+- 🛠️ **OpenSSL 1.1.x on GNU/Debian 12**  
+  https://ixidor.substack.com/p/openssl-11x-on-gnudebian-12
+
 ## PART 2: USING THE CORRECT COMMAND WITH SAML LOGIN
 
 As we will need SAML login for the VPN, we will use the correct flag with openfortivpn. For further information of the used flags, check *man openfortivpn* :
